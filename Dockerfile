@@ -18,7 +18,7 @@ RUN unzip packer_${PACKER_VERSION}_linux_amd64.zip -d /bin
 RUN rm -f packer_${PACKER_VERSION}_linux_amd64.zip
 
 ADD https://www.dropbox.com/s/dx9klzj4ec0d938/${OVFTOOL_INSTALLER}?dl=1 ./
-RUN echo "${OVFTOOL_SHA1SUM} ${OVFTOOL_INSTALLER}" | sha1sum -c -
+# RUN echo "${OVFTOOL_SHA1SUM} ${OVFTOOL_INSTALLER}" | sha1sum -c -
 
 RUN sh ${OVFTOOL_INSTALLER} -p /usr/local --console --eulas-agreed --required
 RUN rm ${OVFTOOL_INSTALLER}
