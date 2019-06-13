@@ -9,7 +9,7 @@ ENV OVFTOOL_INSTALLER VMware-ovftool-${OVFTOOL_VERSION}-lin.x86_64.bundle
 # checksum verified at https://my.vmware.com/group/vmware/get-download?downloadGroup=OVFTOOL430U2
 ENV OVFTOOL_SHA1SUM=54ae517e741d5a6c00350b5b5eb4bd72ed124a78
 
-RUN apt-get update && apt-get -y install unzip && apt-get clean
+# RUN apt-get update && apt-get -y install unzip && apt-get clean
 
 ADD https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip ./
 RUN echo "${PACKER_SHA256SUM} packer_${PACKER_VERSION}_linux_amd64.zip" | sha256sum -c -
